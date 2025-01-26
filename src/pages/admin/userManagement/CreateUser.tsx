@@ -34,7 +34,9 @@ const CreateUser = () => {
       };
 
       const res = await register(userInfo).unwrap();
-      toast.success('User Registration Successfull', { id: toastId, duration: 2000 });
+      if(res){
+        toast.success('User Registration Successfull', { id: toastId, duration: 2000 });
+      }
 
     } catch (error) {
       toast.error('Something went wrong', { id: toastId, duration: 2000 });

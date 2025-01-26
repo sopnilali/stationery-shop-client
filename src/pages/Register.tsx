@@ -3,7 +3,7 @@
 import SSForm from "@/components/form/SSForm";
 import SSInput from "@/components/form/SSInput";
 import { useRegisterMutation } from "@/Redux/features/auth/authApi";
-import { Button, Row } from "antd";
+import { Button } from "antd";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 

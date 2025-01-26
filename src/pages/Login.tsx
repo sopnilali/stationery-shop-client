@@ -6,7 +6,7 @@ import { useAppDispatch } from "@/Redux/hooks";
 import { verifyToken } from "@/utils/verifyToken";
 import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const Login = () => {

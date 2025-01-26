@@ -1,5 +1,5 @@
 
-import { Button, Input, Layout } from 'antd';
+import { Button, Layout } from 'antd';
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const { Footer } = Layout;

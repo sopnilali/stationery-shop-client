@@ -6,7 +6,6 @@ import Register from "@/pages/Register";
 import AllProducts from "@/Products/AllProducts";
 import { createBrowserRouter } from "react-router-dom";
 import ProtectedRoutes from "./ProtectedRoutes";
-import AdminDashboard from "@/pages/admin/AdminDashboard";
 import { routeGenerator } from "@/utils/routeGenerator";
 import { adminPaths } from "./admin.routes";
 import AdminLayout from "@/components/layout/AdminLayout";

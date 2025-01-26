@@ -1,5 +1,3 @@
-
-import AdminDashboard from "@/pages/admin/AdminDashboard";
 import OrderData from "@/pages/admin/orderManagement/OrderData";
 import CreateProductCategory from "@/pages/admin/productManagement/CreateProductCategory";
 import CreateProducts from "@/pages/admin/productManagement/CreateProducts";
@@ -8,7 +6,7 @@ import ProductCategory from "@/pages/admin/productManagement/ProductCategory";
 import CreateUser from "@/pages/admin/userManagement/CreateUser";
 import UserData from "@/pages/admin/userManagement/UserData";
 import UserDetails from "@/pages/admin/userManagement/UserDetails";
-import Register from "@/pages/Register";
+
 
 export const adminPaths = [
     {

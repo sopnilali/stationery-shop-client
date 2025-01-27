@@ -22,7 +22,7 @@ export const headerItemsGenerator = (items: TUserPath[]) => {
                   return {
                     key: child.name,
                     label: (
-                      <NavLink to={`/${child.path}`}>{child.name}</NavLink>
+                      <NavLink  to={`/${child.path}`}>{child.name}</NavLink>
                     ),
                   };
                 }

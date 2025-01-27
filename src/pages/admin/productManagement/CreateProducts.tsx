@@ -83,8 +83,8 @@ const CreateProducts = () => {
   };
 
   return (
-    <Row justify="center">
-      <Col span={24}>
+    <Row justify="center" >
+      <Col span={22}>
         <SSForm onSubmit={onSubmit} defaultValues={studentDefaultValues}>
           <Divider>Personal Info.</Divider>
           <Row gutter={8}>

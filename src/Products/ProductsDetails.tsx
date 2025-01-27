@@ -1,0 +1,56 @@
+import { useGetSingleProductsQuery } from '@/Redux/features/products/productsApi';
+import { Button } from 'antd';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { toast, Toaster } from 'sonner';
+
+interface ProductProps {
+  name?: string;
+  brand?: string;
+  price?: number;
+  category?: string;
+  description?: string;
+  productImg?: string;
+  args?: string; // Added args prop
+}
+
+const ProductDetails: React.FC<ProductProps> = () => {
+
+    const params = useParams();
+    console.log(params)
+
+  const { data: singleData, error, isLoading } = useGetSingleProductsQuery(params.productId);
+  console.log(singleData)
+
+  if (isLoading) return <div className='text-center'>Loading</div>
+  
+  if (error) return <div>Error loading product details</div>;
+
+  return (
+    <div className="bg-white shadow-md p-6">
+      <div className="flex">
+        <img src={singleData?.data?.productImg} alt={singleData?.data?.name || name} className="w-48 h-64 object-cover mr-6" />
+        <div>
+          <h2 className="text-xl font-bold mb-2">{singleData?.data?.name}</h2>
+          <p className="text-gray-600  mb-2">Brand: {singleData?.data?.brand}</p>
+          <p className=" font-semibold mb-2">
+            Price: ৳{singleData?.data?.price}
+          </p>
+          <p className="text-gray-600 mb-2">Category: {singleData?.data?.category}</p>
+          <Button className=" font-semibold py-2 px-4 rounded">
+            Add to Cart
+          </Button>
+        </div>
+      </div>
+      <div className="mt-4 space-y-2">
+        <h2 className="text-lg  font-semibold ">Description</h2>
+        <hr />
+        <p className="text-gray-700 ">{singleData?.data?.description}</p>
+      </div>
+
+
+    </div>
+  );
+};
+
+export default ProductDetails;

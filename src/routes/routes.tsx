@@ -11,6 +11,9 @@ import { adminPaths } from "./admin.routes";
 import AdminLayout from "@/components/layout/AdminLayout";
 import UserLayout from "@/components/layout/UserLayout";
 import { userPaths } from "./user.routes";
+import About from "@/pages/About/About";
+import ProductDetails from "@/Products/ProductsDetails";
+import Carts from "@/pages/Carts/Carts";
 
 const routes = createBrowserRouter([
     {
@@ -23,11 +26,23 @@ const routes = createBrowserRouter([
             },
             {
                 path: "/products",
-                element: <ProtectedRoutes role="user"><AllProducts/></ProtectedRoutes>
+                element: <AllProducts/>
             },
             {
                 path: "/category",
                 element: <div>Category Page</div>
+            },
+            {
+                path: "/about",
+                element: <About />,
+            },
+            {
+                path: "/products/:productId",
+                element: <ProductDetails/>,
+            },
+            {
+                path: "/carts",
+                element: <Carts />,
             }
         ]
     },

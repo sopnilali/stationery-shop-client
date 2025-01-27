@@ -1,6 +1,7 @@
 
-import { Button, Layout } from 'antd';
+import { Button, Input, Layout } from 'antd';
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const { Footer } = Layout;
 
@@ -20,20 +21,18 @@ const Footers = () => {
         Contact Details
         </div>
        </div> */}
-        <footer className="footer  text-base-content p-10">
+        <footer className="footer max-w-7xl  text-base-content p-10">
           <nav>
             <h6 className="footer-title">Services</h6>
-            <a className="link link-hover">Branding</a>
+            <Link to={'/products'} className="link link-hover">All Products</Link>
             <a className="link link-hover">Design</a>
             <a className="link link-hover">Marketing</a>
             <a className="link link-hover">Advertisement</a>
           </nav>
           <nav>
             <h6 className="footer-title">Company</h6>
-            <a className="link link-hover">About us</a>
+            <Link to={'/about'} className="link link-hover">About us</Link>
             <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
           </nav>
           <nav>
             <h6 className="footer-title">Legal</h6>
@@ -43,22 +42,22 @@ const Footers = () => {
           </nav>
           <form>
             <h6 className="footer-title">Newsletter</h6>
-            <fieldset className="form-control w-80">
+            <fieldset className="form-control max-w-80">
               <label className="label">
                 <span className="label-text">Enter your email address</span>
               </label>
-              <div className="join">
-                <input
+              <div className="join gap-1 md:gap-0">
+                <Input
                   type="email"
                   placeholder="username@site.com"
-                  className="input input-bordered join-item" />
-                <Button className=" btn-block  join-item">Subscribe</Button>
+                  className=" input-bordered md:join-item" />
+                <Button className=" md:join-item">Subscribe</Button>
               </div>
             </fieldset>
           </form>
         </footer>
         <footer className="  border-t text-base-content pt-4">
-          <div className='flex flex-col md:flex-row items-center justify-between'>
+          <div className='flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0'>
             <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
             <div className='flex gap-5 items-center text-2xl'>
               <FaFacebook /> <FaLinkedin /> <FaTwitter />

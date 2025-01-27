@@ -7,26 +7,18 @@ const { Content } = Layout;
 
 const MainLayout = () => {
 
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
-
 
   return (
-    <Layout>
+    <Layout className='max-w-7xl mx-auto'>
       <Headers/>
-      <Content style={{ padding: '20px 48px' }}>
-        <div
-          style={{
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
+      <Content>
+        <div>
           <Outlet/>
         </div>
       </Content>
           <Footers/>
     </Layout>
+    
   );
 };
 

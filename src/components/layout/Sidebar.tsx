@@ -24,7 +24,7 @@ const Sidebar = () => {
 
   let sidebarItems;
 
-  switch ((user as TUser)!.role) {
+  switch ((user as TUser)!?.role) {
     case userRole.ADMIN:
       sidebarItems = sidebarItemsGenerator(adminPaths, userRole.ADMIN);
       break;
@@ -40,7 +40,7 @@ const Sidebar = () => {
     <Sider
       breakpoint="lg"
       collapsedWidth="0"
-      style={{ height: '100vh', top: '0', left: '0' }}
+      style={{ height: '150vh', top: '0', left: '0' }}
     >
       <div
         style={{

@@ -1,23 +1,32 @@
 import { baseApi } from "@/Redux/api/baseApi";
 
 
-const authApi = baseApi.injectEndpoints({
+const productsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    login: builder.mutation({
-      query: (userInfo) => ({
-        url: '/auth/login',
-        method: 'POST',
-        body: userInfo,
-      }),
+    getAllProducts: builder.query({
+      query: (args) => {
+        const params = new URLSearchParams();
+        if (args) {
+          Object.entries(args).forEach(([key, value]) => {
+            if (value) params.append(key, value as string);
+          });
+        }
+        return {
+          url: '/products',
+          method: 'GET',
+          params: params,
+        };
+      }
     }),
-    register: builder.mutation({
-      query: (userInfo) => ({
-        url: '/auth/register',
-        method: 'POST',
-        body: userInfo,
-      }),
-    }),
+    getSingleProducts: builder.query({
+      query: (args) => {
+        return {
+          url: `/products/${args}`,
+          method: 'GET',
+        };
+      }
+    })    
   }),
 });
 
-export const { useLoginMutation, useRegisterMutation } = authApi;
+export const { useGetAllProductsQuery, useGetSingleProductsQuery } = productsApi;

@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from '@/Redux/hooks';
 import { publicPaths, rightItemsPaths } from '@/routes/public.routes';
 import { headerItemsGenerator } from '@/utils/headerItemsGenerator';
 import { Button, Layout, Menu, } from 'antd';
-import { toast } from 'sonner';
 
 const { Header} = Layout;
 
@@ -13,10 +12,6 @@ const Headers = () => {
 
   const rightItemsPath: any = headerItemsGenerator(rightItemsPaths)
   const user = useAppSelector(selectCurrentUser);
-  if (!user){
-    toast.success('Logout Sucessfull');
-  }
- 
 
   const dispatch = useAppDispatch();
 
@@ -36,15 +31,16 @@ const Headers = () => {
           width: '100%',
           display: 'flex',
           alignItems: 'center',
-          backgroundColor: "#FFFFFF",
-          color: "black"
+          backgroundColor: "white",
+          color: 'white'
         }}
       >
-        <div>Logo</div>
+        <div><img   src="https://chromeadvice.wordpress.com/wp-content/uploads/2025/01/stationershop-logo.png" alt="" /></div>
         <Menu
           mode="horizontal"
           items={headerItems}
-          style={{ display: 'flex', justifyContent: "center", width:"100%", color:'white' }}
+          color='#003D5F'
+          style={{ display: 'flex', backgroundColor: "white", color: '#003D5F', justifyContent: "center",  width:"100%", }}
         />
         {user ? <Button onClick={handleLogout}>Logout</Button>: <Menu
           mode="horizontal"

@@ -10,8 +10,12 @@ export const publicPaths = [
         path: "/products"
     },
     {
-        name: "All Category",
-        path: "/category"
+        name: "About Us",
+        path: "/about"
+    },
+    {
+        name: "Carts",
+        path: "/carts"
     }
 ]
 

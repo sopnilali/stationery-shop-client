@@ -1,4 +1,4 @@
-import { Layout, theme } from 'antd';
+import { Layout } from 'antd';
 import Headers from '../Header/Headers';
 import { Outlet } from 'react-router-dom';
 import Footers from '../Footer/Footers';

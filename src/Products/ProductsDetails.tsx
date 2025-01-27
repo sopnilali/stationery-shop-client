@@ -2,7 +2,6 @@ import { useGetSingleProductsQuery } from '@/Redux/features/products/productsApi
 import { Button } from 'antd';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { toast, Toaster } from 'sonner';
 
 interface ProductProps {
   name?: string;
@@ -17,10 +16,8 @@ interface ProductProps {
 const ProductDetails: React.FC<ProductProps> = () => {
 
     const params = useParams();
-    console.log(params)
 
   const { data: singleData, error, isLoading } = useGetSingleProductsQuery(params.productId);
-  console.log(singleData)
 
   if (isLoading) return <div className='text-center'>Loading</div>
   

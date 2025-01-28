@@ -15,7 +15,7 @@ const Products = () => {
     return (
         <div className="max-w-7xl">
             <div className="my-5 px-2 grid gap-2 grid-cols-1 md:grid-cols-3">
-                {product.data.data.slice(0, 6).map((product: TProducts) => (
+                {product.data?.data.slice(0, 6).map((product: TProducts) => (
                     <Card key={product._id} title={product.name} bordered={false} style={{ width: "100%" }} >
                         <p><span className="font-semibold">Category</span>: {product?.category}: </p>
                         <p><span className="font-semibold">Price</span>: {product?.price} Taka</p>

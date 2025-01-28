@@ -13,7 +13,8 @@ import UserLayout from "@/components/layout/UserLayout";
 import { userPaths } from "./user.routes";
 import About from "@/pages/About/About";
 import ProductDetails from "@/Products/ProductsDetails";
-import Carts from "@/pages/Carts/Carts";
+import ViewOrder from "@/pages/Order/ViewOrder";
+import VerifyOrder from "@/pages/Order/VerifyOrder";
 
 const routes = createBrowserRouter([
     {
@@ -41,8 +42,12 @@ const routes = createBrowserRouter([
                 element: <ProductDetails/>,
             },
             {
-                path: "/carts",
-                element: <Carts />,
+                path: "/order",
+                element: <ProtectedRoutes role="user"><ViewOrder /></ProtectedRoutes>
+            },
+            {
+                path: "/order/verify",
+                element:  <ProtectedRoutes role="user"><VerifyOrder /></ProtectedRoutes>
             }
         ]
     },

@@ -1,8 +1,7 @@
 import OrderData from "@/pages/admin/orderManagement/OrderData";
-import CreateProductCategory from "@/pages/admin/productManagement/CreateProductCategory";
 import CreateProducts from "@/pages/admin/productManagement/CreateProducts";
 import GetProducts from "@/pages/admin/productManagement/GetProducts";
-import ProductCategory from "@/pages/admin/productManagement/ProductCategory";
+import UpdateProducts from "@/pages/admin/productManagement/UpdateProducts";
 import CreateUser from "@/pages/admin/userManagement/CreateUser";
 import UserData from "@/pages/admin/userManagement/UserData";
 import UserDetails from "@/pages/admin/userManagement/UserDetails";
@@ -28,14 +27,8 @@ export const adminPaths = [
           element: <GetProducts />,
         },
         {
-          name: 'Create P. Category',
-          path: 'create-product-category',
-          element: <CreateProductCategory />,
-        },
-        {
-          name: 'Product Category',
-          path: 'product-category',
-          element: <ProductCategory />,
+          path: 'update-product/:productId',
+          element: <UpdateProducts />,
         }
       ],
     },

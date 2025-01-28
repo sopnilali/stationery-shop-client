@@ -1,4 +1,4 @@
-import { Layout, Menu } from 'antd';
+import {  Layout, Menu } from 'antd';
 import { sidebarItemsGenerator } from '../../utils/sidebarItemsGenerator';
 import { verifyToken } from '../../utils/verifyToken';
 import { TUser, useCurrentToken } from '@/Redux/features/auth/authSlice';
@@ -13,8 +13,11 @@ const userRole = {
   USER: 'user',
 };
 
-const Sidebar = () => {
+const Sidebar = ({collapsed}: any) => {
+
   const token = useAppSelector(useCurrentToken);
+
+
 
   let user;
 
@@ -39,7 +42,7 @@ const Sidebar = () => {
   return (
     <Sider
       breakpoint="lg"
-      collapsedWidth="0"
+      trigger={null} collapsible collapsed={collapsed}
       style={{ height: '150vh', top: '0', left: '0' }}
     >
       <div

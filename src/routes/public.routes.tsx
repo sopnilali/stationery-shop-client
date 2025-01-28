@@ -14,8 +14,11 @@ export const publicPaths = [
         path: "/about"
     },
     {
-        name: "Carts",
-        path: "/carts"
+        name: "Order",
+        path: "/order"
+    },
+    {
+        path: "/order/verify"
     }
 ]
 

@@ -4,12 +4,13 @@ import { Controller } from 'react-hook-form';
 type TPHSelectProps = {
   label: string;
   name: string;
+  defaultValue?: string;
   options: { value: string; label: string; disabled?: boolean }[] | undefined;
   disabled?: boolean;
   mode?: 'multiple' | undefined;
 };
 
-const SSSelect = ({ label, name, options, disabled, mode }: TPHSelectProps) => {
+const SSSelect = ({ label, name, options, defaultValue, disabled, mode }: TPHSelectProps) => {
   return (
     <Controller
       name={name}
@@ -17,6 +18,7 @@ const SSSelect = ({ label, name, options, disabled, mode }: TPHSelectProps) => {
         <Form.Item label={label}>
           <Select
             mode={mode}
+            defaultValue={defaultValue}
             style={{ width: '100%' }}
             {...field}
             options={options}

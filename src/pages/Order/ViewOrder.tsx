@@ -29,7 +29,7 @@ export interface Order {
   __v: number;
 }
 
-export default function ViewOrders() {
+export default function OrderDetails() {
   const { isLoading, data } = useGetOrdersQuery(undefined, {
     refetchOnMountOrArgChange: true,
   });
@@ -49,7 +49,7 @@ export default function ViewOrders() {
           </div>
           <div>
             <h3 className="font-semibold">Order Summary</h3>
-            <p>Total Price: ${order?.totalPrice?.toFixed(2)}</p>
+            <p>Total Price: BDT {order?.totalPrice?.toFixed(2)}</p>
             <p>
               Status:{" "}
               <Badge

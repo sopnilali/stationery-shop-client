@@ -1,4 +1,4 @@
-import { Form, Input } from 'antd';
+import { Form } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { Controller } from 'react-hook-form';
 

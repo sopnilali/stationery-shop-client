@@ -1,8 +1,6 @@
 import { useDeleteProductMutation, useGetAllProductsQuery } from "@/Redux/features/products/productsApi";
-import { TQueryParam } from "@/types";
 import { TProducts } from "@/types/product.type";
-import { Button, Dropdown, Table, TableColumnsType, TableProps } from "antd";
-import { useState } from "react";
+import { Button, Table } from "antd";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 
@@ -10,24 +8,11 @@ export type TTableData = Pick<
   TProducts,
   'name' | 'brand' | 'category' | 'stock' | 'price'>;
 
-  const items = [
-    {
-      label: 'Update',
-      key: 'update',
-    },
-    {
-      label: 'Delete',
-      key: 'Delete',
-    }
-  ];
-
 
 const GetProducts = () => {
-  const {data: ProductsData, isLoading, isFetching,} : any = useGetAllProductsQuery(undefined)
+  const {data: ProductsData, isFetching,} : any = useGetAllProductsQuery(undefined)
 
   const [deleteProduct] = useDeleteProductMutation()
-
-  const [params, setParams] = useState<TQueryParam[] | undefined>(undefined);
 
 
   const tableData = ProductsData?.data?.map(
@@ -40,11 +25,6 @@ const GetProducts = () => {
       stock
     })
   );
-
-  const handleProductUpdate = (data: any) => {
-    
-    // updateSemesterStatus(updateData);
-  };
 
   
 
@@ -108,7 +88,7 @@ const GetProducts = () => {
       render: (key: any) => {
         return (
           <div className="space-x-1">
-           <Link to={`/admin/update-product/${key.key}`}> <Button onClick={()=>handleProductUpdate(key)}>Update</Button></Link>
+           <Link to={`/admin/update-product/${key.key}`}> <Button>Update</Button></Link>
             <Button style={{backgroundColor: "gray", color: "white"}} onClick={()=>handleProductDelete(key)}>Delete</Button>
           </div>
         );
@@ -116,34 +96,11 @@ const GetProducts = () => {
     },
   ];
 
-
-const onChange: TableProps<TTableData>['onChange'] = (
-    _pagination,
-    filters,
-    _sorter,
-    extra
-  ) => {
-    if (extra.action === 'filter') {
-      const queryParams: TQueryParam[] = [];
-
-      filters.name?.forEach((item) =>
-        queryParams.push({ name: 'name', value: item })
-      );
-
-      filters.year?.forEach((item) =>
-        queryParams.push({ name: 'year', value: item })
-      );
-
-      setParams(queryParams);
-    }
-  };
-
   return (
     <Table
       loading={isFetching}
       columns={columns}
       dataSource={tableData}
-      onChange={onChange}
     />
   );
 };

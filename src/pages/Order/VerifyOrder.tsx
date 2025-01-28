@@ -48,7 +48,7 @@ interface OrderData {
 export default function OrderVerification() {
   const [searchParams] = useSearchParams();
 
-  const { isLoading, data } = useVerifyOrderQuery(
+  const { data } = useVerifyOrderQuery(
     searchParams.get("order_id"),
     {
       refetchOnMountOrArgChange: true,

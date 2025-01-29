@@ -2,7 +2,7 @@ import { useGetWithMeQuery } from "@/Redux/features/user/userApi";
 
 const ViewUsers = () => {
 
-      const {data: UserData, isLoading} = useGetWithMeQuery(undefined)
+      const {data: UserData} = useGetWithMeQuery(undefined)
 
 
   return (

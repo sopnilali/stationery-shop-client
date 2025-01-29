@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# Stationary Shop
 
 
 Front-End GitHub Repository: https://github.com/sopnilali/stationery-shop-client

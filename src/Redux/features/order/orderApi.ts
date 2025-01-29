@@ -20,13 +20,30 @@ const orderApi = baseApi.injectEndpoints({
             },
             providesTags: ['orders'],
         }),
-        verifyOrder: builder.query({
-            query: (order_id) => ({
-                url: "/orders/verify",
-                params: { order_id },
-                method: "GET",
-            }),
+        getAllOrders: builder.query({
+            query: () => {
+                return {
+                    url: `/orders/all`,
+                    method: 'GET',
+                };
+            },
             providesTags: ['orders'],
+        }),
+        verifyOrder: builder.mutation({
+            query: (args) => ({
+                url: `/orders/${args}/verify`,
+                method: 'PATCH',
+                body: args,
+            }),
+            invalidatesTags: ['orders'],
+        }), 
+        shippedOrder: builder.mutation({
+            query: (args) => ({
+                url: `/orders/${args}/confirm`,
+                method: 'PATCH',
+                body: args,
+            }),
+            invalidatesTags: ['orders'],
         }),
     }),
 });
@@ -34,5 +51,7 @@ const orderApi = baseApi.injectEndpoints({
 export const {
     useCreateOrderMutation,
     useGetOrdersQuery,
-    useVerifyOrderQuery,
+    useGetAllOrdersQuery,
+    useShippedOrderMutation,
+    useVerifyOrderMutation,
 } = orderApi;

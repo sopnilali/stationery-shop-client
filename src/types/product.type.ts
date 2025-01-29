@@ -8,4 +8,5 @@ export type TProducts = {
     quantity: number
     stock: boolean
     user: string
-  }
+}
+

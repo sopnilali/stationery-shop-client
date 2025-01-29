@@ -18,8 +18,7 @@ const Login = () => {
         password: 'sopnil1234',
       };
 
-    const [login] = useLoginMutation();
-    
+    const [login, ] = useLoginMutation();
 
 
     const onSubmit = async (data: FieldValues) => {
@@ -31,13 +30,12 @@ const Login = () => {
             password: data.password,
           };
           const res = await login(userInfo).unwrap();
-    
           const user = verifyToken(res.data.accessToken);
           dispatch(setUser({ user: user, token: res.data.accessToken }));
           toast.success('Logged in', { id: toastId, duration: 2000 });
           navigate(`/${user?.role}/dashboard`);
         } catch (err) {
-          toast.error('Something went wrong', { id: toastId, duration: 2000 });
+          toast.error(`Somthing Error`, { id: toastId, duration: 2000 });
         }
       };
 

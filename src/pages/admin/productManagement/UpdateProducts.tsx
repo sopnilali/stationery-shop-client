@@ -6,9 +6,9 @@ import { brandOptions, categoryOptions } from "@/constants/global";
 import { useGetSingleProductsQuery, useUpdateProductMutation } from "@/Redux/features/products/productsApi";
 import { Button, Col, Divider, Form, Input, Row } from "antd";
 import axios from 'axios';
-import { useState } from "react";
 import { Controller, FieldValues, SubmitHandler } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
+import { toast } from "sonner";
 
 
 const CreateProducts = () => {
@@ -17,12 +17,12 @@ const CreateProducts = () => {
 
     const { data: singleProduct } = useGetSingleProductsQuery(useparams?.productId)
 
-    const [updateProduct] = useUpdateProductMutation();
-    const [productid, setproductId] = useState(useparams?.productId);
+    const [updateProduct,] = useUpdateProductMutation();
 
-    
 
     const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+        console.log(data)
+        const toastId = toast.loading('Logging in');
 
 
         const image_hosting_key = '1d706f7f1b94e02b531d0f01ccf9cb6d'
@@ -47,14 +47,18 @@ const CreateProducts = () => {
                 productImg: result.data.data.url,
             }
             const updateData = {
-                id: productid,
+                id: useparams?.productId,
                 data: ProductData,
               };
+              console.log(updateData)
 
-            updateProduct(updateData);
+            const res = await updateProduct(updateData);
+
+            if(res){
+                toast.success("'Product Update Successfull'", { id: toastId, duration: 2000 });
+            }
         }
     };
-
 
     return (
         <Row justify="center" >

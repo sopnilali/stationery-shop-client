@@ -38,16 +38,16 @@ export default function OrderDetails() {
   return isLoading ? (
     <SkeletonCard />
   ) : (
-    <div className="mx-auto p-10 columns-1 divide-y divide-x">
-      {orderData?.map((order) => (
-        <div className="grid grid-cols-2 gap-4">
-          <div>
+    <div className="mx-auto p-10 columns-1 space-y-5 ">
+      {orderData?.length ? orderData?.map((order) => (
+        <div className="grid grid-cols-2 gap-4 border p-2">
+          <div className="bg-green-200 p-4 hover:shadow-md rounded-lg">
             <h3 className="font-semibold">Customer Information</h3>
             <p>User ID: {order?.user}</p>
             <p>Order Date: {new Date(order?.createdAt).toLocaleString()}</p>
             <p>Last Updated: {new Date(order?.updatedAt).toLocaleString()}</p>
           </div>
-          <div>
+          <div className="bg-gray-200 p-4 hover:shadow-md rounded-lg">
             <h3 className="font-semibold">Order Summary</h3>
             <p>Total Price: BDT {order?.totalPrice?.toFixed(2)}</p>
             <p>
@@ -77,7 +77,7 @@ export default function OrderDetails() {
             <p>Transaction Status: {order?.transaction?.bank_status}</p>
           </div>
         </div>
-      ))}
+      )): "Order Not Found"}
     </div>
   );
 }

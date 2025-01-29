@@ -40,7 +40,11 @@ const CartSheet = () => {
       }
     }
 
-    if (isError) toast.error(JSON.stringify(error), { id: toastId });
+    if (isError) {
+      toast.error("Order is not specified", { id: toastId });
+    }
+
+
   }, [data?.data, data?.message, error, isError, isLoading, isSuccess]);
 
   return (

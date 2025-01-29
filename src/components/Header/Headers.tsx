@@ -8,8 +8,7 @@ import { ShoppingBagIcon } from 'lucide-react';
 import { removeFromCart, updateQuantity } from '@/Redux/features/cart/cartSlice';
 import { useCreateOrderMutation } from '@/Redux/features/order/orderApi';
 import { useEffect } from 'react';
-import { toast } from 'sonner';
-import { useGetWithMeQuery } from '@/Redux/features/user/userApi';
+import { toast } from 'sonner';git a
 
 
 

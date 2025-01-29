@@ -58,7 +58,7 @@ const Footers = () => {
         </footer>
         <footer className="  border-t text-base-content pt-4">
           <div className='flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0'>
-            <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+            <p>Copyright © {new Date().getFullYear()} - All right reserved by Stationery Shop</p>
             <div className='flex gap-5 items-center text-2xl'>
               <FaFacebook /> <FaLinkedin /> <FaTwitter />
             </div>

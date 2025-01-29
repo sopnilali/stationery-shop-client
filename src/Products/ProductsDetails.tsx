@@ -54,7 +54,7 @@ const ProductDetails: React.FC<ProductProps> = () => {
             Price: ৳{singleData?.data?.price}
           </p>
           <p className="text-gray-600 mb-2">Category: {singleData?.data?.category}</p>
-          {UserData?.data?.role == 'user' ? <Button onClick={() => handleAddToCart()} className=" font-semibold py-2 px-4 rounded">
+          {UserData?.data?.role == 'user' && UserData  ? <Button onClick={() => handleAddToCart()} className=" font-semibold py-2 px-4 rounded">
             Add to Cart
           </Button>: <><Button disabled className=" font-semibold py-2 px-4 rounded">
             Add to Cart

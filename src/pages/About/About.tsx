@@ -8,13 +8,13 @@ const About: React.FC = () => {
       <section className='space-y-3'>
         <h2 className="text-xl font-semibold">Our Story</h2>
         <p>
-          Welcome to <strong>Stationery Shop</strong>, your trusted destination for quality products and exceptional customer service. Founded with the vision to provide an unparalleled shopping experience, Nahar Shop has grown into a beloved community hub where customers can find a wide range of products that cater to their needs and desires.
+          Welcome to <strong>Stationery Shop</strong>, your trusted destination for quality products and exceptional customer service. Founded with the vision to provide an unparalleled shopping experience, Stationery Shop has grown into a beloved community hub where customers can find a wide range of products that cater to their needs and desires.
         </p>
       </section>
       <section  className='space-y-3'>
         <h2 className="text-xl font-semibold">Our Mission</h2>
         <p>
-          At Nahar Shop, our mission is simple: <strong>to deliver the best shopping experience possible</strong>. We strive to offer:
+          At Stationery Shop, our mission is simple: <strong>to deliver the best shopping experience possible</strong>. We strive to offer:
         </p>
         <ul className="list-disc list-inside">
           <li><strong>Quality Products:</strong> We source only the finest products from trusted suppliers to ensure that you receive the best of the best.</li>
@@ -23,9 +23,9 @@ const About: React.FC = () => {
         </ul>
       </section>
       <section className='space-y-2'>
-        <h2 className="text-xl font-semibold">Why Choose Nahar Shop?</h2>
+        <h2 className="text-xl font-semibold">Why Choose Stationery Shop?</h2>
         <ul className="list-disc list-inside">
-          <li><strong>Diverse Selection:</strong> From everyday essentials to unique finds, Nahar Shop has something for everyone.</li>
+          <li><strong>Diverse Selection:</strong> From everyday essentials to unique finds, Stationery Shop has something for everyone.</li>
           <li><strong>Affordable Prices:</strong> We believe that quality shouldn't come with a hefty price tag. That's why we offer competitive pricing on all our products.</li>
           <li><strong>Convenience:</strong> With our easy-to-navigate online store, you can shop from the comfort of your home and have your purchases delivered right to your doorstep.</li>
         </ul>
@@ -33,13 +33,13 @@ const About: React.FC = () => {
       <section className='space-y-2'>
         <h2 className="text-xl font-semibold">Our Commitment</h2>
         <p>
-          We are committed to sustainability and ethical practices. Nahar Shop takes pride in being an eco-conscious business, and we continually seek ways to reduce our environmental footprint. Our goal is to create a better future for the generations to come.
+          We are committed to sustainability and ethical practices. Stationery Shop takes pride in being an eco-conscious business, and we continually seek ways to reduce our environmental footprint. Our goal is to create a better future for the generations to come.
         </p>
       </section>
       <section className='space-y-3'>
         <h2 className="text-xl font-semibold">Join Us</h2>
         <p>
-          Thank you for choosing Nahar Shop. We look forward to serving you and making your shopping experience memorable. Together, let's build a community of happy, satisfied customers.
+          Thank you for choosing Stationery Shop. We look forward to serving you and making your shopping experience memorable. Together, let's build a community of happy, satisfied customers.
         </p>
       </section>
     </div>

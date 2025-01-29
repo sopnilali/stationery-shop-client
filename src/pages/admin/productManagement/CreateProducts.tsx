@@ -7,6 +7,7 @@ import { useCreateProductMutation } from "@/Redux/features/products/productsApi"
 import { Button, Col, Divider, Form, Input, Row } from "antd";
 import axios from 'axios';
 import { Controller, FieldValues, SubmitHandler } from "react-hook-form";
+import { toast } from "sonner";
 
 
 const CreateProducts = () => {
@@ -15,6 +16,7 @@ const CreateProducts = () => {
   const [addProduct] = useCreateProductMutation();
 
   const onSubmit: SubmitHandler<FieldValues> = async(data) => {
+    const toastId = toast.loading('Logging in');
 
 
     const image_hosting_key = '1d706f7f1b94e02b531d0f01ccf9cb6d'
@@ -38,7 +40,10 @@ const CreateProducts = () => {
       description: data.description,
       productImg: result.data.data.url,
     }
-    addProduct(ProductData);
+    const res : any = addProduct(ProductData);
+    if (res) {
+      toast.success('Product Create Successfull', { id: toastId, duration: 2000 });
+    }
   }
   };
 

@@ -21,24 +21,14 @@ const Footers = () => {
         Contact Details
         </div>
        </div> */}
-        <footer className="footer max-w-7xl  text-base-content p-10">
+        <footer className="footer max-w-7xl flex justify-between flex-col md:flex-row text-base-content p-10">
           <nav>
             <h6 className="footer-title">Services</h6>
             <Link to={'/products'} className="link link-hover">All Products</Link>
-            <a className="link link-hover">Design</a>
-            <a className="link link-hover">Marketing</a>
-            <a className="link link-hover">Advertisement</a>
           </nav>
           <nav>
             <h6 className="footer-title">Company</h6>
             <Link to={'/about'} className="link link-hover">About us</Link>
-            <a className="link link-hover">Contact</a>
-          </nav>
-          <nav>
-            <h6 className="footer-title">Legal</h6>
-            <a className="link link-hover">Terms of use</a>
-            <a className="link link-hover">Privacy policy</a>
-            <a className="link link-hover">Cookie policy</a>
           </nav>
           <form>
             <h6 className="footer-title">Newsletter</h6>

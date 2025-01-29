@@ -9,6 +9,7 @@ import { removeFromCart, updateQuantity } from '@/Redux/features/cart/cartSlice'
 import { useCreateOrderMutation } from '@/Redux/features/order/orderApi';
 import { useEffect } from 'react';
 import { toast } from 'sonner';
+import { useGetWithMeQuery } from '@/Redux/features/user/userApi';
 
 
 
@@ -17,6 +18,8 @@ const { Header} = Layout;
 
 const CartSheet = () => {
   const dispatch = useAppDispatch();
+
+
 
   const [createOrder,  { isLoading, isSuccess, data, isError, error }] = useCreateOrderMutation();
 
@@ -149,6 +152,7 @@ const CartSheet = () => {
             <Button className="w-full bg-gray-500 text-white" onClick={handlePlaceOrder}>
             Order Now
             </Button>
+            
           </SheetClose>
         </SheetFooter>
       </SheetContent>

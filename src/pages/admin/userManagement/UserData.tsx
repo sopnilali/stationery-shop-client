@@ -84,7 +84,7 @@ const UserData = () => {
       dataIndex: 'role',
     },
     {
-      title: 'Status',
+      title: 'Action',
       key: 'x',
       render: (key: any) => {
 
@@ -92,13 +92,13 @@ const UserData = () => {
 
           return (
             <div>
-              <h2>Not Active</h2>
+              <h2>Blocked</h2>
             </div>
           );
         }else{
           return (
             <div>
-              <Button onClick={()=>HandleStatus(key)}>Active</Button>
+              <Button onClick={()=>HandleStatus(key)}>Block</Button>
             </div>
           );
         }

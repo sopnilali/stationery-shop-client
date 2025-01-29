@@ -50,7 +50,7 @@ const Footers = () => {
           <div className='flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0'>
             <p>Copyright © {new Date().getFullYear()} - All right reserved by Stationery Shop</p>
             <div className='flex gap-5 items-center text-2xl'>
-              <FaFacebook /> <FaLinkedin /> <FaTwitter />
+              <Link to={'https://www.facebook.com/cse.wadud'}><FaFacebook /></Link> <Link to={'https://www.linkedin.com/'}><FaLinkedin /></Link> <Link to={'https://x.com/'}><FaTwitter /></Link>
             </div>
           </div>
         </footer>
